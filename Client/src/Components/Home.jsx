@@ -1,20 +1,64 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Nav, Container, Navbar } from 'react-bootstrap';
+import emailjs from 'emailjs-com';
 
 import './style.scss'
 
 const Home = () => {
+    const [status, setStatus] = useState('');
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            await emailjs.send(
+                'service_ibvqto5',     // Thay thế bằng ID dịch vụ EmailJS của bạn
+                'template_eljkdm8',    // Thay thế bằng ID mẫu EmailJS của bạn
+                {
+                    ...formData,
+                    to_name: "Ninh",
+                    from_name: formData.name,
+                    from_email: formData.email,
+                },
+                '3f9pLHe23sIlPiuj9');    // Thay thế bằng Public Key của bạn (YOUR_USER_ID)
+
+            setStatus('SUCCESS');
+            setFormData({
+                name: '',
+                email: '',
+                subject: '',
+                message: ''
+            });
+        } catch (error) {
+            setStatus('FAILED');
+        }
+    };
+
     return (
         <>
             <div className='bg-dark text-light min-vh-100' id='about'>
-                <Navbar collapseOnSelect expand="md" className="bg-body-tertiary fixed-top" data-bs-theme="dark">
+                <Navbar collapseOnSelect expand="md" className="bg-body-tertiary fixed-top blue-bg-color" data-bs-theme="dark">
                     <Container>
                         <Navbar.Brand href="#about" className='fs-3'>Portfolio</Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
                             </Nav>
-                            <Nav className='fs-5 text gap-4'>
+                            <Nav className='fs-5 text-white gap-4'>
                                 <Nav.Link href="#about">About</Nav.Link>
                                 <Nav.Link href="#experience">Experience</Nav.Link>
                                 <Nav.Link href="#project">Project</Nav.Link>
@@ -40,7 +84,11 @@ const Home = () => {
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius sint, numquam asperiores sed sit facere accusamus, inventore odit, repellat repudiandae distinctio nulla saepe reprehenderit quaerat porro minus amet tempora enim?
                             </p>
                             <div className='text-center'>
-                                <button className='btn btn-lg btn-primary' type="button">Download Resume</button>
+                                <a className='btn btn-lg btn-primary'
+                                    href="/Fresher_Backend_Engineer_Le_Vu_An_Ninh.pdf"
+                                    download="Fresher_Backend_Engineer_Le_Vu_An_Ninh.pdf">
+                                    Download Resume
+                                </a>
                             </div>
                         </div>
 
@@ -209,11 +257,23 @@ const Home = () => {
 
                             <div className="row">
                                 <div className="col-lg-6 mx-auto mb-4">
-                                    <form id="contactForm" name="sentMessage">
+                                    <form
+                                        onSubmit={handleSubmit}
+                                    >
                                         <div className="control-group">
                                             <div className="form-group floating-label-form-group controls">
                                                 <label>Your name</label>
-                                                <input className="form-control" id="name" type="text" placeholder="Enter your name" required="required" data-validation-required-message="Please enter your name."></input>
+                                                <input
+                                                    className="form-control"
+                                                    id="name"
+                                                    type="text"
+                                                    name="name"
+                                                    placeholder="Enter your name"
+                                                    required
+                                                    data-validation-required-message="Please enter your name."
+                                                    value={formData.name}
+                                                    onChange={handleChange}
+                                                ></input>
                                                 <p className="help-block text-danger"></p>
                                             </div>
                                         </div>
@@ -221,7 +281,17 @@ const Home = () => {
                                         <div className="control-group">
                                             <div className="form-group floating-label-form-group controls">
                                                 <label>Email</label>
-                                                <input className="form-control" id="email" type="email" placeholder="Enter your email" required="required" data-validation-required-message="Please enter your email."></input>
+                                                <input
+                                                    className="form-control"
+                                                    id="email"
+                                                    type="email"
+                                                    name="email"
+                                                    placeholder="Enter your email"
+                                                    required
+                                                    value={formData.email}
+                                                    onChange={handleChange}
+                                                    data-validation-required-message="Please enter your email."
+                                                ></input>
                                                 <p className="help-block text-danger"></p>
                                             </div>
                                         </div>
@@ -229,7 +299,17 @@ const Home = () => {
                                         <div className="control-group">
                                             <div className="form-group floating-label-form-group controls">
                                                 <label>Title</label>
-                                                <input className="form-control" id="subject" type="text" placeholder="Message title" required="required" data-validation-required-message="Please enter message title."></input>
+                                                <input
+                                                    className="form-control"
+                                                    id="subject"
+                                                    type="text"
+                                                    name="subject"
+                                                    placeholder="Message title"
+                                                    required
+                                                    data-validation-required-message="Please enter message title."
+                                                    value={formData.subject}
+                                                    onChange={handleChange}
+                                                ></input>
                                                 <p className="help-block text-danger"></p>
                                             </div>
                                         </div>
@@ -237,14 +317,30 @@ const Home = () => {
                                         <div className="control-group">
                                             <div className="form-group floating-label-form-group controls">
                                                 <label>Content</label>
-                                                <textarea className="form-control" id="message" rows="3" placeholder="Message content" required="required" data-validation-required-message="Please enter message content."></textarea>
+                                                <textarea
+                                                    className="form-control"
+                                                    id="message"
+                                                    name="message"
+                                                    rows="3"
+                                                    placeholder="Message content"
+                                                    required
+                                                    data-validation-required-message="Please enter message content."
+                                                    value={formData.message}
+                                                    onChange={handleChange}
+                                                ></textarea>
                                                 <p className="help-block text-danger"></p>
                                             </div>
                                         </div>
 
                                         <div className="form-group">
-                                            <button type="submit" className="btn btn-primary btn-xl w-25" id="sendMessageButton">Send</button>
+                                            <button type="submit" className="btn btn-primary btn-xl w-25" >Send</button>
                                         </div>
+                                        {status === 'SUCCESS' &&
+                                            window.alert("Your message was sent successfully!")
+                                        }
+                                        {status === 'FAILED' &&
+                                            window.alert("Failed to send your message. Please try again.")
+                                        }
                                     </form>
                                 </div>
                             </div>
@@ -254,7 +350,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <footer className="bg-dark text-white">
+            <footer className="blue-bg-color text-white">
                 <div className="container py-3">
                     <div className="row">
                         <div className="col-md-6">
@@ -268,13 +364,25 @@ const Home = () => {
                             <div className="col-md-6 text-md-right">
                                 <ul className="list-inline d-flex justify-content-start gap-2">
                                     <li className="list-inline-item">
-                                        <a href="#"><i className="fab fa-facebook fs-1"></i></a>
+                                        <a href="https://www.facebook.com/An.Ninh123"
+                                            target="_blank"
+                                            rel="noopener noreferrer">
+                                            <i className="fab fa-facebook fs-1"></i>
+                                        </a>
                                     </li>
                                     <li className="list-inline-item">
-                                        <a href="#"><i className="fab fa-linkedin fs-1"></i></a>
+                                        <a href="https://www.linkedin.com/in/le-vu-an-ninh"
+                                            target="_blank"
+                                            rel="noopener noreferrer">
+                                            <i className="fab fa-linkedin fs-1"></i>
+                                        </a>
                                     </li>
                                     <li className="list-inline-item">
-                                        <a href="#"><i className="fab fa-github fs-1"></i></a>
+                                        <a href="https://github.com/AnNinh2605"
+                                            target="_blank"
+                                            rel="noopener noreferrer">
+                                            <i className="fab fa-github fs-1"></i>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
