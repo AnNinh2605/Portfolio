@@ -1,11 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Nav, Container, Navbar } from 'react-bootstrap';
 import emailjs from 'emailjs-com';
 
 import './style.scss'
 
+import ExperienceData from '../Data/Experience.json';
+import ProjectData from '../Data/Project.json';
+import SkillData from '../Data/Skill.json';
+
 const Home = () => {
+    const [experienceList, setExpericenceList] = useState([]);
+    const [projectList, setProjectList] = useState([]);
+    const [skillList, setSkillList] = useState([]);
+
+    // status for statuc after sending email in contact section
     const [status, setStatus] = useState('');
+    // FormData for sending email in contact section
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -47,6 +57,12 @@ const Home = () => {
             setStatus('FAILED');
         }
     };
+
+    useEffect(() => {
+        setExpericenceList(ExperienceData);
+        setProjectList(ProjectData);
+        setSkillList(SkillData);
+    }, [])
 
     return (
         <>
@@ -109,65 +125,30 @@ const Home = () => {
                 <div className='container pb-4'>
                     <div className="row">
                         <h1>Experience</h1>
-                        <div className="col-md-6 d-flex justify-content-between flex-wrap text-center">
-                            <div className='px-4'>
-                                <img src='src/assets/skill_img/javascript.jpg' className="img-fluid rounded-circle skill-img" alt="Skill Image"></img>
-                                <h3>Javascript</h3>
-                            </div>
-                            <div className='px-4'>
-                                <img src='src/assets/skill_img/javascript.jpg' className="img-fluid rounded-circle skill-img" alt="Skill Image"></img>
-                                <h3>Javascript</h3>
-                            </div>
-                            <div className='px-4'>
-                                <img src='src/assets/skill_img/javascript.jpg' className="img-fluid rounded-circle skill-img" alt="Skill Image"></img>
-                                <h3>Javascript</h3>
-                            </div>
-                            <div className='px-4'>
-                                <img src='src/assets/skill_img/javascript.jpg' className="img-fluid rounded-circle skill-img" alt="Skill Image"></img>
-                                <h3>Javascript</h3>
-                            </div>
-                            <div className='px-4'>
-                                <img src='src/assets/skill_img/javascript.jpg' className="img-fluid rounded-circle skill-img" alt="Skill Image"></img>
-                                <h3>Javascript</h3>
-                            </div>
-                            <div className='px-4'>
-                                <img src='src/assets/skill_img/javascript.jpg' className="img-fluid rounded-circle skill-img" alt="Skill Image"></img>
-                                <h3>Javascript</h3>
-                            </div>
-                            <div className='px-4'>
-                                <img src='src/assets/skill_img/javascript.jpg' className="img-fluid rounded-circle skill-img" alt="Skill Image"></img>
-                                <h3>Javascript</h3>
-                            </div>
-                            <div className='px-4'>
-                                <div className='skill_picture'>
-                                    <img src='src/assets/skill_img/javascript.jpg' className="img-fluid rounded-circle skill-img" alt="Skill Image"></img>
-                                </div>
-                                <h3>Javascript</h3>
-                            </div>
+                        <div className="col-md-6 d-flex flex-wrap text-center">
+                            {skillList && skillList.length > 0 && skillList.map((item, index) => {
+                                return (
+                                    <div key={`skill-${index}`} className='px-4'>
+                                        <img src={item.image} className="img-fluid rounded-circle skill-img" alt={item.name}></img>
+                                        <h3>{item.name}</h3>
+                                    </div>
+                                )
+                            })}
                         </div>
 
                         <div className="col-md-6">
                             <div className='d-flex flex-column gap-3'>
-                                <div className='bg-secondary text-light border p-3 rounded'>
-                                    <h4>Company</h4>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore natus repellat repellendus eligendi consectetur autem officia sunt laborum.
-                                    </p>
-                                </div>
-
-                                <div className='bg-secondary text-light border p-3 rounded'>
-                                    <h4>Company</h4>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore natus repellat repellendus eligendi consectetur autem officia sunt laborum.
-                                    </p>
-                                </div>
-
-                                <div className='bg-secondary text-light border p-3 rounded'>
-                                    <h4>Company</h4>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore natus repellat repellendus eligendi consectetur autem officia sunt laborum.
-                                    </p>
-                                </div>
+                                {experienceList && experienceList.length > 0 &&
+                                    experienceList.map((item, index) => {
+                                        return (
+                                            <div key={`experience-${index}`} className='bg-secondary text-light border p-3 rounded'>
+                                                <h4>{item.companyName}</h4>
+                                                <p>
+                                                    {item.description}
+                                                </p>
+                                            </div>
+                                        )
+                                    })}
                             </div>
                         </div>
                     </div>
@@ -181,63 +162,34 @@ const Home = () => {
 
                 <div className="container pb-4">
                     <h1>Projects</h1>
-                    <div className='d-flex flex-column flex-md-row justify-content-between mt-3'>
-                        <div className="card col-md-3 mb-4">
-                            <img src="src/assets/project.jpg" className="card-img-top px-3 pt-2" alt="..." />
-                            <div className="card-body d-flex flex-column gap-2 px-3 py-2">
-                                <h5 className="card-title mb-0">Project Title</h5>
-                                <p className="card-text mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non posuere sapien. Sed at justo nec ex iaculis vestibulum.</p>
-                                <div className='d-flex flex-wrap justify-content-between gap-2'>
-                                    <button className='btn btn-secondary btn-sm rounded-pill'>NodeJs</button>
-                                    <button className='btn btn-secondary btn-sm rounded-pill'>Express</button>
-                                    <button className='btn btn-secondary btn-sm rounded-pill'>MongoDB</button>
-                                    <button className='btn btn-secondary btn-sm rounded-pill'>React</button>
-                                    <button className='btn btn-secondary btn-sm rounded-pill'>Bootstrap</button>
-                                </div>
-                                <div className='d-flex justify-content-between gap-4'>
-                                    <a href="#" className="btn btn-primary btn-sm rounded-pill w-50">Demo</a>
-                                    <a href="#" className="btn btn-primary btn-sm rounded-pill w-50">Source</a>
-                                </div>
-                            </div>
-                        </div>
+                    <div className='d-flex flex-column flex-md-row mt-3 gap-5'>
+                        {projectList && projectList.length > 0 &&
+                            projectList.map((item, index) => {
+                                return (
+                                    <div key={`projectList-${index}`} className="card col-md mb-4">
+                                        <img src="src/assets/project.jpg" className="card-img-top px-3 pt-2" alt="..." />
+                                        <div className="card-body d-flex flex-column gap-2 px-3 py-2">
+                                            <h5 className="card-title mb-0">{item.project_title}</h5>
+                                            <p className="card-text mb-1">{item.description}</p>
+                                            <div className='d-flex flex-wrap gap-2'>
+                                                {item.button && item.button.length > 0 &&
+                                                    item.button.map((item, index) => {
+                                                        return (
+                                                            <button key={`button-${index}`} className='btn btn-secondary btn-sm rounded-pill'>{item}</button>
+                                                        )
+                                                    })
+                                                }
 
-                        <div className="card col-md-3 mb-4">
-                            <img src="src/assets/project.jpg" className="card-img-top px-3 pt-2" alt="..." />
-                            <div className="card-body d-flex flex-column gap-2 px-3 py-2">
-                                <h5 className="card-title mb-0">Project Title</h5>
-                                <p className="card-text mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non posuere sapien. Sed at justo nec ex iaculis vestibulum.</p>
-                                <div className='d-flex flex-wrap justify-content-between gap-2'>
-                                    <button className='btn btn-secondary btn-sm rounded-pill'>NodeJs</button>
-                                    <button className='btn btn-secondary btn-sm rounded-pill'>Express</button>
-                                    <button className='btn btn-secondary btn-sm rounded-pill'>MongoDB</button>
-                                    <button className='btn btn-secondary btn-sm rounded-pill'>React</button>
-                                    <button className='btn btn-secondary btn-sm rounded-pill'>Bootstrap</button>
-                                </div>
-                                <div className='d-flex justify-content-between gap-4'>
-                                    <a href="#" className="btn btn-primary btn-sm rounded-pill w-50">Demo</a>
-                                    <a href="#" className="btn btn-primary btn-sm rounded-pill w-50">Source</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="card col-md-3 mb-4">
-                            <img src="src/assets/project.jpg" className="card-img-top px-3 pt-2" alt="..." />
-                            <div className="card-body d-flex flex-column gap-2 px-3 py-2">
-                                <h5 className="card-title mb-0">Project Title</h5>
-                                <p className="card-text mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non posuere sapien. Sed at justo nec ex iaculis vestibulum.</p>
-                                <div className='d-flex flex-wrap justify-content-between gap-2'>
-                                    <button className='btn btn-secondary btn-sm rounded-pill'>NodeJs</button>
-                                    <button className='btn btn-secondary btn-sm rounded-pill'>Express</button>
-                                    <button className='btn btn-secondary btn-sm rounded-pill'>MongoDB</button>
-                                    <button className='btn btn-secondary btn-sm rounded-pill'>React</button>
-                                    <button className='btn btn-secondary btn-sm rounded-pill'>Bootstrap</button>
-                                </div>
-                                <div className='d-flex justify-content-between gap-4'>
-                                    <a href="#" className="btn btn-primary btn-sm rounded-pill w-50">Demo</a>
-                                    <a href="#" className="btn btn-primary btn-sm rounded-pill w-50">Source</a>
-                                </div>
-                            </div>
-                        </div>
+                                            </div>
+                                            <div className='d-flex justify-content-between gap-4'>
+                                                <a href="#" className="btn btn-primary btn-sm rounded-pill w-50">Demo</a>
+                                                <a href="#" className="btn btn-primary btn-sm rounded-pill w-50">Source</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
                 </div>
             </div>
@@ -257,9 +209,7 @@ const Home = () => {
 
                             <div className="row">
                                 <div className="col-lg-6 mx-auto mb-4">
-                                    <form
-                                        onSubmit={handleSubmit}
-                                    >
+                                    <form onSubmit={handleSubmit}>
                                         <div className="control-group">
                                             <div className="form-group floating-label-form-group controls">
                                                 <label>Your name</label>

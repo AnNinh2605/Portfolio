@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Javascript",
+        "image": "src/assets/skill_img/javascript.jpg"
+    },
+    {
+        "name": "ReactJS",
+        "image": "src/assets/skill_img/react.jpg"
+    },
+    {
+        "name": "NodeJS",
+        "image": "src/assets/skill_img/nodejs.jpg"
+    },
+    {
+        "name": "mongoDB",
+        "image": "src/assets/skill_img/mongoDB.jpg"
+    },
+    {
+        "name": "Bootstrap",
+        "image": "src/assets/skill_img/bootstrap.jpg"
+    },
+    {
+        "name": "ExpressJS",
+        "image": "src/assets/skill_img/express.jpg"
+    }
+]
