@@ -109,7 +109,7 @@ const Home = () => {
                         </div>
 
                         <div className='col-md-6 text-center my-auto'>
-                            <img src="src/assets/picture.jpg"
+                            <img src="/assets/picture.jpg"
                                 className="img-fluid rounded-circle mt-4 avatar-img"
                                 alt="Avatar Image"
                             />
@@ -167,7 +167,7 @@ const Home = () => {
                             projectList.map((item, index) => {
                                 return (
                                     <div key={`projectList-${index}`} className="card col-md mb-4">
-                                        <img src="src/assets/project.jpg" className="card-img-top px-3 pt-2" alt="..." />
+                                        <img src="/assets/project.jpg" className="card-img-top px-3 pt-2" alt="..." />
                                         <div className="card-body d-flex flex-column gap-2 px-3 py-2">
                                             <h5 className="card-title mb-0">{item.project_title}</h5>
                                             <p className="card-text mb-1">{item.description}</p>
