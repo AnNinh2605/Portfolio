@@ -22,5 +22,9 @@
     {
         "name": "ExpressJS",
         "image": "/assets/skill_img/express.jpg"
+    },
+    {
+        "name": "HTML",
+        "image": "/assets/skill_img/html.jpg"
     }
 ]

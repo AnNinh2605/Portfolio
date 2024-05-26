@@ -1,17 +1,19 @@
 [
     {
+        "project_title": "Employee-MS",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore natus repellat repellendus.",
+        "button": ["NodeJs", "Javascript", "MongoDB", "ExpressJS", "Bootstrap", "ReactJS"],
+        "deploy": "https://employee-management-system-client.vercel.app",
+        "source": "https://github.com/AnNinh2605/Employee-Management-System"
+    },
+    {
         "project_title": "Project Title",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore natus repellat repellendus eligendi consectetur autem officia sunt laborum.",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore natus repellat repellendus.",
         "button": ["NodeJs", "JS", "MongoDB", "Express", "Bootstrap", "React"]
     },
     {
         "project_title": "Project Title",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore natus repellat repellendus eligendi consectetur autem officia sunt laborum.",
-        "button": ["NodeJs", "JS", "MongoDB", "Express", "Bootstrap", "React"]
-    },
-    {
-        "project_title": "Project Title",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore natus repellat repellendus eligendi consectetur autem officia sunt laborum.",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore natus repellat repellendus.",
         "button": ["NodeJs", "JS", "MongoDB", "Express", "Bootstrap", "React"]
     }
 ]

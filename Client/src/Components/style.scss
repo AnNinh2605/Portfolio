@@ -1,18 +1,91 @@
-.blue-bg-color{
+.blue-bg-color {
     background-color: #03588C !important;
 }
 
-.bg-bg-color{
-    background-color: #874CCC !important;
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+
+    50% {
+        transform: translatey(-20px);
+    }
+
+    100% {
+        transform: translatey(0px);
+    }
 }
 
 .avatar-img {
     width: 300px;
     aspect-ratio: 1 / 1;
     object-fit: cover;
+
+    transform: translatey(0px);
+    animation: float 6s ease-in-out infinite;
 }
 
 .skill-img {
     max-width: 6em;
     object-fit: cover;
+}
+
+.zoom-container {
+    display: inline-block;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    * {
+        transition: none !important;
+    }
+}
+
+.gradient-bg {
+    background: linear-gradient(to right, #113847, #367994);
+}
+
+.btn-button {
+    background-color: #066286;
+    transition: background-color 0.3s ease;
+    color: #fff;
+
+    &:hover {
+        background-color: #054761;
+        color: #fff;
+    }
+}
+
+.btn-project-skill {
+    background-color: #113847;
+    color: #fff;
+
+    &:hover {
+        background-color: #113847;
+        color: #fff;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+    /* Bắt đầu với opacity 0 để ẩn phần tử */
 }
