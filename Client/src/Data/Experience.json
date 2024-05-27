@@ -1,14 +1,22 @@
 [
     {
-        "companyName": "Company",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore natus repellat repellendus eligendi consectetur autem officia sunt laborum."
+        "companyName": "Employee MS",
+        "position": "- Personal project (Self-learning)",
+        "description": [
+            "After completing the Employee-MS project, I gained valuable experience in web development and project management:",
+            "Technology Development: Improved skills in both front-end (ReactJS) and back-end (Node.js, Express) development.",
+            "Data Management: Learned how the data was transported from client to server, stored in database, and back.",
+            "Input Validation: Validated input data on both client and server side.",
+            "Authentication: Implemented authentication using JWT and refresh tokens.",
+            "Project Management: Use git to manage project, save source code, and roll back when errors occur."
+        ]
     },
     {
-        "companyName": "Company",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore natus repellat repellendus eligendi consectetur autem officia sunt laborum."
-    },
-    {
-        "companyName": "Company",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore natus repellat repellendus eligendi consectetur autem officia sunt laborum."
+        "companyName": "UniGap",
+        "position": "- Student",
+        "description": [
+            "Studying Backend Engineer course (Software Engineer fundamental + Backend Engineer) at Software Engineer - UniGap.",
+            "Main language: Java."
+        ]
     }
 ]

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-import ExperienceData from '../Data/Experience.json';
-import SkillData from '../Data/Skill.json';
+import ExperienceData from '../../Data/Experience.json';
+import SkillData from '../../Data/Skill.json';
 
 const Experience = () => {
     const [experienceList, setExpericenceList] = useState([]);
@@ -20,26 +20,35 @@ const Experience = () => {
             <div className='container pb-4 fade-in'>
                 <div className="row">
                     <h1>Experience</h1>
-                    <div className="col-md-6 d-flex flex-wrap text-center gap-2">
+                    <div className="col-md-5 d-flex flex-wrap text-center gap-4">
                         {skillList && skillList.length > 0 && skillList.map((item, index) => {
                             return (
                                 <div key={`skill-${index}`} className='px-2 zoom-container'>
-                                    <img src={item.image} className="img-fluid rounded-circle skill-img" alt={item.name}></img>
-                                    <h3>{item.name}</h3>
+                                    <img src={item.image}
+                                        className="img-fluid rounded-circle skill-img"
+                                        alt={item.name}>
+                                    </img>
+                                    <h4>{item.name}</h4>
                                 </div>
                             )
                         })}
                     </div>
 
-                    <div className="col-md-6">
+                    <div className="col-md-7">
                         <div className='d-flex flex-column gap-3'>
                             {experienceList && experienceList.length > 0 &&
                                 experienceList.map((item, index) => {
                                     return (
                                         <div key={`experience-${index}`}
                                             className='text-light border p-3 rounded zoom-container gradient-bg'>
-                                            <h4>{item.companyName}</h4>
-                                            <p className='mb-0'>{item.description}</p>
+                                            <h5>{`${item.companyName} ${item.position}`}</h5>
+                                            {item.description && item.description.map((item, index) => {
+                                                return (
+                                                    <li key={`experience-description-${index}`}
+                                                        className='mb-0 fs-6'>{item}
+                                                    </li>
+                                                )
+                                            })}
                                         </div>
                                     )
                                 })}

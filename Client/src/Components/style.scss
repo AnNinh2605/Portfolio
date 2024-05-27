@@ -1,91 +1,100 @@
-.blue-bg-color {
-    background-color: #03588C !important;
-}
-
 body {
     font-family: 'Open Sans', sans-serif;
-}
 
-@keyframes float {
-    0% {
-        transform: translatey(0px);
+    // general css
+    .blue-bg-color {
+        background-color: #03588C !important;
     }
 
-    50% {
-        transform: translatey(-20px);
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
-    100% {
-        transform: translatey(0px);
-    }
-}
-
-.avatar-img {
-    width: 300px;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-
-    transform: translatey(0px);
-    animation: float 6s ease-in-out infinite;
-}
-
-.skill-img {
-    max-width: 6em;
-    object-fit: cover;
-}
-
-.zoom-container {
-    display: inline-block;
-    transition: transform 0.3s ease;
-
-    &:hover {
-        transform: scale(1.05);
+    .fade-in {
+        animation: fadeIn 1s ease-out forwards;
+        opacity: 0;
     }
 
-    * {
-        transition: none !important;
+    .text-indent {
+        text-indent: 2em;
     }
-}
 
-.gradient-bg {
-    background: linear-gradient(to right, #113847, #367994);
-}
+    .zoom-container {
+        display: inline-block;
+        transition: transform 0.3s ease;
 
-.btn-button {
-    background-color: #066286;
-    transition: background-color 0.3s ease;
-    color: #fff;
+        &:hover {
+            transform: scale(1.05);
+        }
 
-    &:hover {
-        background-color: #054761;
+        * {
+            transition: none !important;
+        }
+    }
+
+    .btn-button {
+        background-color: #066286;
+        transition: background-color 0.3s ease;
         color: #fff;
+
+        &:hover {
+            background-color: #054761;
+            color: #fff;
+        }
     }
-}
 
-.btn-project-skill {
-    background-color: #113847;
-    color: #fff;
+    // about
+    @keyframes float {
+        0% {
+            transform: translatey(0px);
+        }
 
-    &:hover {
+        50% {
+            transform: translatey(-20px);
+        }
+
+        100% {
+            transform: translatey(0px);
+        }
+    }
+
+    .avatar-img {
+        width: 300px;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+
+        transform: translatey(0px);
+        animation: float 6s ease-in-out infinite;
+    }
+
+    // experience
+    .skill-img {
+        max-width: 6em;
+        object-fit: cover;
+    }
+
+    .gradient-bg {
+        background: linear-gradient(to right, #113847, #367994);
+    }
+
+    // project
+    .btn-project-skill {
         background-color: #113847;
         color: #fff;
-    }
-}
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+        &:hover {
+            background-color: #113847;
+            color: #fff;
+        }
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.fade-in {
-    animation: fadeIn 1s ease-out forwards;
-    opacity: 0;
-    /* Bắt đầu với opacity 0 để ẩn phần tử */
+    // contact
 }

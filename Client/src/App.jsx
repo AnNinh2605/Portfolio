@@ -1,19 +1,31 @@
 
-import './App.css'
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import About from './Components/About';
-import Contact from './Components/Contact'
-import Experience from './Components/Experience'
-import Project from './Components/Project'
+import About from './Components/Components/About';
+import Contact from './Components/Components/Contact'
+import Experience from './Components/Components/Experience'
+import Project from './Components/Components/Project'
 import Layout from './Components/Layout';
-import NotFound from './Components/NotFound';
+import NotFound from './Components/Components/NotFound';
 
 function App() {
+    const ScrollToTop = () => {
+        const { pathname } = useLocation();
+
+        useEffect(() => {
+            window.scrollTo(0, 0);
+        }, [pathname]);
+
+        return null;
+    };
+
     return (
         <BrowserRouter>
+            <ScrollToTop />
             <Routes>
                 <Route path="/" element={<Navigate to="/home" />} />
                 <Route path='/' element={<Layout />}>

@@ -15,10 +15,13 @@ const About = () => {
                         <h1 className='text-center'>
                             Hi, I'm Ninh
                         </h1>
-                        <p className='fs-5'>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius sint, numquam asperiores sed sit facere accusamus, inventore odit, repellat repudiandae distinctio nulla saepe reprehenderit quaerat porro minus amet tempora enim?
+                        <p className='fs-5 text-indent'>
+                            As a newcomer to the field of information technology, I am eager to enhance my skills and knowledge to become a web developer. I aspire to apply the theoretical knowledge I have acquired to practical projects.
                         </p>
-                        <div className='text-center'>
+                        <p className='fs-5'>
+                            Besides that, I usually spend time exploring something new in technology to apply it to work and daily life.
+                        </p>
+                        <div className='text-center '>
                             <a className='btn btn-lg btn-button rounded-pill'
                                 href="/Fresher_Backend_Engineer_Le_Vu_An_Ninh.pdf"
                                 download="Fresher_Backend_Engineer_Le_Vu_An_Ninh.pdf">

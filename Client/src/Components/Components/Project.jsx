@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import ProjectData from '../Data/Project.json';
+import ProjectData from '../../Data/Project.json';
 
 const Project = () => {
     const [projectList, setProjectList] = useState([]);
@@ -16,16 +16,18 @@ const Project = () => {
 
             <div className="container pb-4 fade-in">
                 <h1>Projects</h1>
-                <div className='d-flex flex-column flex-md-row mt-3 gap-3'>
+                <div className='d-flex flex-column flex-md-row mt-2 gap-3'>
                     {projectList && projectList.length > 0 &&
                         projectList.map((item, index) => {
                             return (
                                 <div key={`projectList-${index}`}
-                                    className="card col-md mb-4 zoom-container">
-                                    <img src="/assets/project.jpg" className="card-img-top px-3 pt-2" alt="..." />
-                                    <div className="card-body d-flex flex-column px-3 py-2">
-                                        <h5 className="card-title mb-0">{item.project_title}</h5>
-                                        <p className="card-text mb-1">{item.description}</p>
+                                    className="card col-md-4 mb-2 zoom-container mx-auto">
+                                    <img
+                                        src="/assets/project.jpg"
+                                        className="card-img-top px-3 pt-2" alt="Project image" />
+                                    <div className="card-body d-flex flex-column px-3 py-2 gap-1">
+                                        <h4 className="mb-0">{item.project_title}</h4>
+                                        <p className="mb-0">{item.description}</p>
                                         <div className='d-flex flex-wrap gap-2'>
                                             {item.button && item.button.length > 0 &&
                                                 item.button.map((item, index) => {
@@ -37,11 +39,11 @@ const Project = () => {
                                         </div>
                                         <div className='d-flex justify-content-between gap-4 mt-2'>
                                             <a href={item.deploy}
-                                                className="btn btn-button btn-sm rounded-pill w-50 fs-5"
+                                                className="btn btn-button rounded-pill w-50"
                                                 target='_blank'>DEMO
                                             </a>
                                             <a href={item.source}
-                                                className="btn btn-button btn-sm rounded-pill w-50 fs-5"
+                                                className="btn btn-button rounded-pill w-50"
                                                 target='_blank'>SOURCE
                                             </a>
                                         </div>

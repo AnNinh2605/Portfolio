@@ -26,15 +26,15 @@ const Contact = () => {
 
         try {
             await emailjs.send(
-                'service_ibvqto5',     // Thay thế bằng ID dịch vụ EmailJS của bạn
-                'template_eljkdm8',    // Thay thế bằng ID mẫu EmailJS của bạn
+                'service_ibvqto5',     
+                'template_eljkdm8',    
                 {
                     ...formData,
                     to_name: "Ninh",
                     from_name: formData.name,
                     from_email: formData.email,
                 },
-                '3f9pLHe23sIlPiuj9');    // Thay thế bằng Public Key của bạn (YOUR_USER_ID)
+                '3f9pLHe23sIlPiuj9');  
 
             setStatus('SUCCESS');
             setFormData({
@@ -45,6 +45,11 @@ const Contact = () => {
             });
         } catch (error) {
             setStatus('FAILED');
+        }
+        {
+            status === 'SUCCESS' ?
+            window.alert("Your message was sent successfully!") :
+            window.alert("Failed to send your message. Please try again.")
         }
     };
 
@@ -138,14 +143,10 @@ const Contact = () => {
                                     </div>
 
                                     <div className="form-group">
-                                        <button type="submit" className="btn btn-button btn-xl w-25" >SEND</button>
+                                        <button type="submit" className="btn btn-button btn-xl w-25" >
+                                            SEND
+                                        </button>
                                     </div>
-                                    {status === 'SUCCESS' &&
-                                        window.alert("Your message was sent successfully!")
-                                    }
-                                    {status === 'FAILED' &&
-                                        window.alert("Failed to send your message. Please try again.")
-                                    }
                                 </form>
                             </div>
                         </div>

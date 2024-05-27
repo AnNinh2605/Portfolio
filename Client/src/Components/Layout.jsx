@@ -30,21 +30,21 @@ const Layout = () => {
                             </Link>
                             <Link
                                 to="/experience"
-                                className={`nav-link ${location.pathname === '/home/experience' ? 
+                                className={`nav-link ${location.pathname === '/experience' ? 
                                 'pb-0 border-bottom border-4 border-white': ''}`}
                             >
                                 Experience
                             </Link>
                             <Link
                                 to="/project"
-                                className={`nav-link ${location.pathname === '/home/project' ? 
+                                className={`nav-link ${location.pathname === '/project' ? 
                                 'pb-0 border-bottom border-4 border-white': ''}`}
                             >
                                 Project
                             </Link>
                             <Link
                                 to="/contact"
-                                className={`nav-link ${location.pathname === '/home/contact' ? 
+                                className={`nav-link ${location.pathname === '/contact' ? 
                                 'pb-0 border-bottom border-4 border-white': ''}`}
                             >
                                 Contact
@@ -63,7 +63,7 @@ const Layout = () => {
                             <h5>Contact information</h5>
                             <p>Email: anninh1511@gmail.com</p>
                             <p>Phone: (+84) 398708264</p>
-                            <p>Address: 123 street ABC, district XYZ, HCM city</p>
+                            <p>Address: Ho Chi Minh City</p>
                         </div>
                         <div className="col-md-6">
                             <h5>Quick Links</h5>

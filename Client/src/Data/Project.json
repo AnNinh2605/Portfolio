@@ -1,19 +1,10 @@
 [
     {
-        "project_title": "Employee-MS",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore natus repellat repellendus.",
-        "button": ["NodeJs", "Javascript", "MongoDB", "ExpressJS", "Bootstrap", "ReactJS"],
+        "project_title": "Employee MS",
+        "description": "Develop Employee MS web project including client and server side, supporting creating, editing, and deleting employee, department, and position information.",
+        "button": ["Javascript", "NodeJs", "ExpressJS", "ReactJS", "MongoDB", "Bootstrap"],
         "deploy": "https://employee-management-system-client.vercel.app",
         "source": "https://github.com/AnNinh2605/Employee-Management-System"
-    },
-    {
-        "project_title": "Project Title",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore natus repellat repellendus.",
-        "button": ["NodeJs", "JS", "MongoDB", "Express", "Bootstrap", "React"]
-    },
-    {
-        "project_title": "Project Title",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore natus repellat repellendus.",
-        "button": ["NodeJs", "JS", "MongoDB", "Express", "Bootstrap", "React"]
     }
 ]
+
