@@ -15,15 +15,15 @@ const Layout = () => {
                 className="bg-body-tertiary fixed-top blue-bg-color"
                 data-bs-theme="dark">
                 <Container>
-                    <Navbar.Brand href="/home" className='fs-3'>Portfolio</Navbar.Brand>
+                    <Navbar.Brand href="/" className='fs-3'>Portfolio</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
                         </Nav>
                         <Nav className='fs-5 text-white gap-4'>
                             <Link
-                                to="/home"
-                                className={`nav-link ${location.pathname === '/home' ? 
+                                to="/"
+                                className={`nav-link ${location.pathname === '/' ? 
                                 'pb-0 border-bottom border-4 border-white': ''}`}
                             >
                                 About

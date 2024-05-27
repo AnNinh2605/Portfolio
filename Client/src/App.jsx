@@ -27,9 +27,8 @@ function App() {
         <BrowserRouter>
             <ScrollToTop />
             <Routes>
-                <Route path="/" element={<Navigate to="/home" />} />
                 <Route path='/' element={<Layout />}>
-                    <Route path='/home' element={<About />} />
+                    <Route path='/' element={<About />} />
                     <Route path='/experience' element={<Experience />} />
                     <Route path='/project' element={<Project />} />
                     <Route path='/contact' element={<Contact />} />
