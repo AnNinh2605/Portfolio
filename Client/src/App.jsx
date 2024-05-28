@@ -28,7 +28,7 @@ function App() {
             <ScrollToTop />
             <Routes>
                 <Route path='/layout' element={<Layout />}>
-                    <Route index element={<About />} />
+                    <Route path='' element={<About />} />
                     <Route path='/layout/experience' element={<Experience />} />
                     <Route path='/layout/project' element={<Project />} />
                     <Route path='/layout/contact' element={<Contact />} />
