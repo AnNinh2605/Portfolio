@@ -28,12 +28,12 @@ function App() {
             <ScrollToTop />
             <Routes>
                 <Route path='/' element={<Layout />}>
-                    <Route index path="/about" element={<About />} />
-                    <Route path='/experience' element={<Experience />} />
-                    <Route path='/project' element={<Project />} />
-                    <Route path='/contact' element={<Contact />} />
+                    <Route index element={<About />} />
+                    <Route path='experience' element={<Experience />} />
+                    <Route path='project' element={<Project />} />
+                    <Route path='contact' element={<Contact />} />
                 </Route>
-                <Route element={<NotFound />} />
+                <Route path='*' element={<NotFound />} />
             </Routes>
         </BrowserRouter>
     )
