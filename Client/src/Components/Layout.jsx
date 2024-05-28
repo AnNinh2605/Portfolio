@@ -2,10 +2,34 @@ import React from 'react';
 import { Nav, Container, Navbar } from 'react-bootstrap';
 import { Link, Outlet, useLocation } from "react-router-dom";
 
+import About from './About';
+import Contact from './Contact'
+import Experience from './Experience'
+import Project from './Project'
+import NotFound from './NotFound';
+
 import './style.scss'
 
 const Layout = () => {
     const location = useLocation();
+    const pathName = location.pathname;
+
+    const childComponent = () => {
+        switch (pathName) {
+            case '/':
+                return <About></About>
+            case '/experience':
+                return <Experience></Experience>
+            case 'experience':
+                return <Experience></Experience>
+            case '/project':
+                return <Project></Project>
+            case '/contact':
+                return <Contact></Contact>
+            default:
+                return <NotFound></NotFound>
+        }
+    }
 
     return (
         <div>
@@ -54,9 +78,7 @@ const Layout = () => {
                 </Container>
             </Navbar>
 
-            <main>
-                <Outlet /> 
-            </main>
+            {childComponent()}
 
             <footer className="blue-bg-color text-white">
                 <div className="container py-3">
