@@ -54,11 +54,7 @@ const Layout = () => {
                 </Container>
             </Navbar>
 
-            <h1 className='fs-1'>Child page not found</h1>
-            <div>
-                <Outlet />
-            </div>
-            <h1 className='fs-1'>Child page not found</h1>
+            <Outlet></Outlet>
 
             <footer className="blue-bg-color text-white">
                 <div className="container py-3">
