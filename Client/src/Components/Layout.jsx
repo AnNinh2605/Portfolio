@@ -1,6 +1,6 @@
 import React from 'react';
 import { Nav, Container, Navbar } from 'react-bootstrap';
-import { Link, Outlet, useLocation  } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 
 import './style.scss'
 
@@ -23,29 +23,29 @@ const Layout = () => {
                         <Nav className='fs-5 text-white gap-4'>
                             <Link
                                 to="/"
-                                className={`nav-link ${location.pathname === '/' ? 
-                                'pb-0 border-bottom border-4 border-white': ''}`}
+                                className={`nav-link ${location.pathname === '/' ?
+                                    'pb-0 border-bottom border-4 border-white' : ''}`}
                             >
                                 About
                             </Link>
                             <Link
                                 to="/experience"
-                                className={`nav-link ${location.pathname === '/experience' ? 
-                                'pb-0 border-bottom border-4 border-white': ''}`}
+                                className={`nav-link ${location.pathname === '/experience' ?
+                                    'pb-0 border-bottom border-4 border-white' : ''}`}
                             >
                                 Experience
                             </Link>
                             <Link
                                 to="/project"
-                                className={`nav-link ${location.pathname === '/project' ? 
-                                'pb-0 border-bottom border-4 border-white': ''}`}
+                                className={`nav-link ${location.pathname === '/project' ?
+                                    'pb-0 border-bottom border-4 border-white' : ''}`}
                             >
                                 Project
                             </Link>
                             <Link
                                 to="/contact"
-                                className={`nav-link ${location.pathname === '/contact' ? 
-                                'pb-0 border-bottom border-4 border-white': ''}`}
+                                className={`nav-link ${location.pathname === '/contact' ?
+                                    'pb-0 border-bottom border-4 border-white' : ''}`}
                             >
                                 Contact
                             </Link>
@@ -54,8 +54,12 @@ const Layout = () => {
                 </Container>
             </Navbar>
 
-            <Outlet></Outlet>
             <h1 className='fs-1'>Child page not found</h1>
+            <div>
+                <Outlet />
+            </div>
+            <h1 className='fs-1'>Child page not found</h1>
+
             <footer className="blue-bg-color text-white">
                 <div className="container py-3">
                     <div className="row">
