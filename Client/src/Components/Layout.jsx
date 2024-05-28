@@ -1,33 +1,33 @@
 import React from 'react';
 import { Nav, Container, Navbar } from 'react-bootstrap';
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, Outlet } from "react-router-dom";
 
-import About from './About';
-import Contact from './Contact'
-import Experience from './Experience'
-import Project from './Project'
-import NotFound from './NotFound';
+// import About from './About';
+// import Contact from './Contact'
+// import Experience from './Experience'
+// import Project from './Project'
+// import NotFound from './NotFound';
 
 import './style.scss'
 
 const Layout = () => {
     const location = useLocation();
-    const pathName = location.pathname;
+    // const pathName = location.pathname;
 
-    const childComponent = () => {
-        switch (pathName) {
-            case '/layout':
-                return <About></About>
-            case '/layout/experience':
-                return <Experience></Experience>
-            case '/layout/project':
-                return <Project></Project>
-            case '/layout/contact':
-                return <Contact></Contact>
-            default:
-                return <NotFound></NotFound>
-        }
-    }
+    // const childComponent = () => {
+    //     switch (pathName) {
+    //         case '/layout':
+    //             return <About></About>
+    //         case '/layout/experience':
+    //             return <Experience></Experience>
+    //         case '/layout/project':
+    //             return <Project></Project>
+    //         case '/layout/contact':
+    //             return <Contact></Contact>
+    //         default:
+    //             return <NotFound></NotFound>
+    //     }
+    // }
 
     return (
         <div>
@@ -37,35 +37,35 @@ const Layout = () => {
                 className="bg-body-tertiary fixed-top blue-bg-color"
                 data-bs-theme="dark">
                 <Container>
-                    <Navbar.Brand href="/layout" className='fs-3'>Portfolio</Navbar.Brand>
+                    <Navbar.Brand href="/" className='fs-3'>Portfolio</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
                         </Nav>
                         <Nav className='fs-5 text-white gap-4'>
                             <Link
-                                to="/layout"
-                                className={`nav-link ${location.pathname === '/layout' ?
+                                to="/"
+                                className={`nav-link ${location.pathname === '/' ?
                                     'pb-0 border-bottom border-4 border-white' : ''}`}
                             >
                                 About
                             </Link>
                             <Link
-                                to="/layout/experience"
+                                to="/experience"
                                 className={`nav-link ${location.pathname === '/experience' ?
                                     'pb-0 border-bottom border-4 border-white' : ''}`}
                             >
                                 Experience
                             </Link>
                             <Link
-                                to="/layout/project"
+                                to="/project"
                                 className={`nav-link ${location.pathname === '/project' ?
                                     'pb-0 border-bottom border-4 border-white' : ''}`}
                             >
                                 Project
                             </Link>
                             <Link
-                                to="/layout/contact"
+                                to="/contact"
                                 className={`nav-link ${location.pathname === '/contact' ?
                                     'pb-0 border-bottom border-4 border-white' : ''}`}
                             >
@@ -75,8 +75,13 @@ const Layout = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-            {console.log(location.pathname)}
-            {childComponent()}
+
+            {/* {childComponent()} */}
+            {/* {console.log(location.pathname)} */}
+
+            <main>
+                <Outlet />
+            </main>
 
             <footer className="blue-bg-color text-white">
                 <div className="container py-3">
