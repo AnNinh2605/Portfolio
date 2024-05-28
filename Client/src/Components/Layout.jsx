@@ -77,7 +77,7 @@ const Layout = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-            {console.log(location.pathname)};
+            {console.log(location.pathname)}
             {childComponent()}
 
             <footer className="blue-bg-color text-white">
