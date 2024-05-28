@@ -16,15 +16,13 @@ const Layout = () => {
 
     const childComponent = () => {
         switch (pathName) {
-            case '/':
+            case '/layout':
                 return <About></About>
-            case '/experience':
+            case '/layout/experience':
                 return <Experience></Experience>
-            case 'experience':
-                return <Experience></Experience>
-            case '/project':
+            case '/layout/project':
                 return <Project></Project>
-            case '/contact':
+            case '/layout/contact':
                 return <Contact></Contact>
             default:
                 return <NotFound></NotFound>
@@ -39,35 +37,35 @@ const Layout = () => {
                 className="bg-body-tertiary fixed-top blue-bg-color"
                 data-bs-theme="dark">
                 <Container>
-                    <Navbar.Brand href="/" className='fs-3'>Portfolio</Navbar.Brand>
+                    <Navbar.Brand href="/layout" className='fs-3'>Portfolio</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
                         </Nav>
                         <Nav className='fs-5 text-white gap-4'>
                             <Link
-                                to="/"
-                                className={`nav-link ${location.pathname === '/' ?
+                                to="/layout"
+                                className={`nav-link ${location.pathname === '/layout' ?
                                     'pb-0 border-bottom border-4 border-white' : ''}`}
                             >
                                 About
                             </Link>
                             <Link
-                                to="/experience"
+                                to="/layout/experience"
                                 className={`nav-link ${location.pathname === '/experience' ?
                                     'pb-0 border-bottom border-4 border-white' : ''}`}
                             >
                                 Experience
                             </Link>
                             <Link
-                                to="/project"
+                                to="/layout/project"
                                 className={`nav-link ${location.pathname === '/project' ?
                                     'pb-0 border-bottom border-4 border-white' : ''}`}
                             >
                                 Project
                             </Link>
                             <Link
-                                to="/contact"
+                                to="/layout/contact"
                                 className={`nav-link ${location.pathname === '/contact' ?
                                     'pb-0 border-bottom border-4 border-white' : ''}`}
                             >

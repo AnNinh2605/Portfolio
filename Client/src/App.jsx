@@ -27,11 +27,11 @@ function App() {
         <BrowserRouter>
             <ScrollToTop />
             <Routes>
-                <Route path='/' element={<Layout />}>
+                <Route path='/layout' element={<Layout />}>
                     <Route index element={<About />} />
-                    <Route path='experience' element={<Experience />} />
-                    <Route path='project' element={<Project />} />
-                    <Route path='contact' element={<Contact />} />
+                    <Route path='/layout/experience' element={<Experience />} />
+                    <Route path='/layout/project' element={<Project />} />
+                    <Route path='/layout/contact' element={<Contact />} />
                 </Route>
                 <Route path='*' element={<NotFound />} />
             </Routes>
