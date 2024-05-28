@@ -1,5 +1,5 @@
 
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.css';
@@ -24,7 +24,7 @@ function App() {
     };
 
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/">
             <ScrollToTop />
             <Routes>
                 <Route path='/' element={<Layout />}>
