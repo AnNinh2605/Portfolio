@@ -8,7 +8,7 @@ const Layout = () => {
     const location = useLocation();
 
     return (
-        <>
+        <div>
             <Navbar
                 collapseOnSelect
                 expand="md"
@@ -102,7 +102,7 @@ const Layout = () => {
                     </div>
                 </div>
             </footer>
-        </>
+        </div>
     );
 }
 
