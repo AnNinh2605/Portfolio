@@ -1,33 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Nav, Container, Navbar } from 'react-bootstrap';
-import { Link, useLocation, Outlet } from "react-router-dom";
 
-// import About from './About';
-// import Contact from './Contact'
-// import Experience from './Experience'
-// import Project from './Project'
-// import NotFound from './NotFound';
+import About from './About';
+import Contact from './Contact'
+import Experience from './Experience'
+import Project from './Project'
+import NotFound from './NotFound';
 
 import './style.scss'
 
 const Layout = () => {
-    const location = useLocation();
-    // const pathName = location.pathname;
+    const [component, setComponent] = useState('about');
 
-    // const childComponent = () => {
-    //     switch (pathName) {
-    //         case '/layout':
-    //             return <About></About>
-    //         case '/layout/experience':
-    //             return <Experience></Experience>
-    //         case '/layout/project':
-    //             return <Project></Project>
-    //         case '/layout/contact':
-    //             return <Contact></Contact>
-    //         default:
-    //             return <NotFound></NotFound>
-    //     }
-    // }
+    const childComponent = () => {
+        switch (component) {
+            case 'about':
+                return <About></About>
+            case 'experience':
+                return <Experience></Experience>
+            case 'project':
+                return <Project></Project>
+            case 'contact':
+                return <Contact></Contact>
+            default:
+                return <NotFound></NotFound>
+        }
+    }
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [component]);
 
     return (
         <div>
@@ -43,45 +45,40 @@ const Layout = () => {
                         <Nav className="me-auto">
                         </Nav>
                         <Nav className='fs-5 text-white gap-4'>
-                            <Link
-                                to="/"
-                                className={`nav-link ${location.pathname === '/' ?
-                                    'pb-0 border-bottom border-4 border-white' : ''}`}
+                            <div
+                                onClick={() => setComponent('about')}
+                                className={component.includes('about') ?
+                                    'pb-0 border-bottom border-4 border-white' : ''}
                             >
                                 About
-                            </Link>
-                            <Link
-                                to="/experience"
-                                className={`nav-link ${location.pathname === '/experience' ?
-                                    'pb-0 border-bottom border-4 border-white' : ''}`}
+                            </div>
+                            <div
+                                onClick={() => setComponent('experience')}
+                                className={component.includes('experience') ?
+                                    'pb-0 border-bottom border-4 border-white' : ''}
                             >
                                 Experience
-                            </Link>
-                            <Link
-                                to="/project"
-                                className={`nav-link ${location.pathname === '/project' ?
-                                    'pb-0 border-bottom border-4 border-white' : ''}`}
+                            </div>
+                            <div
+                                onClick={() => setComponent('project')}
+                                className={component.includes('project') ?
+                                    'pb-0 border-bottom border-4 border-white' : ''}
                             >
                                 Project
-                            </Link>
-                            <Link
-                                to="/contact"
-                                className={`nav-link ${location.pathname === '/contact' ?
-                                    'pb-0 border-bottom border-4 border-white' : ''}`}
+                            </div>
+                            <div
+                                onClick={() => setComponent('contact')}
+                                className={component.includes('contact') ?
+                                    'pb-0 border-bottom border-4 border-white' : ''}
                             >
                                 Contact
-                            </Link>
+                            </div>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
 
-            {/* {childComponent()} */}
-            {/* {console.log(location.pathname)} */}
-
-            <main>
-                <Outlet />
-            </main>
+            {childComponent()}
 
             <footer className="blue-bg-color text-white">
                 <div className="container py-3">
