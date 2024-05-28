@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import ProjectData from '../../Data/Project.json';
+import ProjectData from '../Data/Project.json';
 
 const Project = () => {
     const [projectList, setProjectList] = useState([]);

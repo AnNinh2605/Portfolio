@@ -5,12 +5,12 @@ import { useLocation } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import About from './Components/Components/About';
-import Contact from './Components/Components/Contact'
-import Experience from './Components/Components/Experience'
-import Project from './Components/Components/Project'
+import About from './Components/About';
+import Contact from './Components/Contact'
+import Experience from './Components/Experience'
+import Project from './Components/Project'
 import Layout from './Components/Layout';
-import NotFound from './Components/Components/NotFound';
+import NotFound from './Components/NotFound';
 
 function App() {
     const ScrollToTop = () => {

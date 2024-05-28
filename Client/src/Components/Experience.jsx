@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-import ExperienceData from '../../Data/Experience.json';
-import SkillData from '../../Data/Skill.json';
+import ExperienceData from '../Data/Experience.json';
+import SkillData from '../Data/Skill.json';
 
 const Experience = () => {
     const [experienceList, setExpericenceList] = useState([]);

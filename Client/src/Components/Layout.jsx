@@ -54,7 +54,7 @@ const Layout = () => {
                 </Container>
             </Navbar>
 
-            <Outlet />
+            <Outlet></Outlet>
 
             <footer className="blue-bg-color text-white">
                 <div className="container py-3">
