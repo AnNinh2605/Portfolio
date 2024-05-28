@@ -1,6 +1,6 @@
 import React from 'react';
 import { Nav, Container, Navbar } from 'react-bootstrap';
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import About from './About';
 import Contact from './Contact'
@@ -77,7 +77,7 @@ const Layout = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-
+            {console.log(location.pathname)};
             {childComponent()}
 
             <footer className="blue-bg-color text-white">
