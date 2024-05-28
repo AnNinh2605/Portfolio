@@ -6,6 +6,10 @@ body {
         background-color: #03588C !important;
     }
 
+    .cursor {
+        cursor: pointer;
+    }
+
     @keyframes fadeIn {
         from {
             opacity: 0;

@@ -23,8 +23,8 @@ const About = () => {
                         </p>
                         <div className='text-center '>
                             <a className='btn btn-lg btn-button rounded-pill'
-                                href="/Fresher_Backend_Engineer_Le_Vu_An_Ninh.pdf"
-                                download="Fresher_Backend_Engineer_Le_Vu_An_Ninh.pdf">
+                                href="/Le_Vu_An_Ninh_Web_Developer_CV.pdf"
+                                download="Le_Vu_An_Ninh_Web_Developer_CV.pdf">
                                 Download Resume
                             </a>
                         </div>

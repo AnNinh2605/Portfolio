@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 
 const Contact = () => {
-
-    // status for statuc after sending email in contact section
+    // status after sending email in contact section
     const [status, setStatus] = useState('');
-    // FormData for sending email in contact section
+    // formData for sending email in contact section
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -26,15 +25,15 @@ const Contact = () => {
 
         try {
             await emailjs.send(
-                'service_ibvqto5',     
-                'template_eljkdm8',    
+                'service_ibvqto5',
+                'template_eljkdm8',
                 {
                     ...formData,
                     to_name: "Ninh",
                     from_name: formData.name,
                     from_email: formData.email,
                 },
-                '3f9pLHe23sIlPiuj9');  
+                '3f9pLHe23sIlPiuj9');
 
             setStatus('SUCCESS');
             setFormData({
@@ -46,10 +45,11 @@ const Contact = () => {
         } catch (error) {
             setStatus('FAILED');
         }
+        
         {
             status === 'SUCCESS' ?
-            window.alert("Your message was sent successfully!") :
-            window.alert("Failed to send your message. Please try again.")
+                window.alert("Your message was sent successfully!") :
+                window.alert("Failed to send your message. Please try again.")
         }
     };
 

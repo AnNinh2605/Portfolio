@@ -48,28 +48,28 @@ const Layout = () => {
                             <div
                                 onClick={() => setComponent('about')}
                                 className={component.includes('about') ?
-                                    'pb-0 border-bottom border-4 border-white' : ''}
+                                    'pb-0 border-bottom border-4 border-white cursor' : 'cursor'}
                             >
                                 About
                             </div>
                             <div
                                 onClick={() => setComponent('experience')}
                                 className={component.includes('experience') ?
-                                    'pb-0 border-bottom border-4 border-white' : ''}
+                                    'pb-0 border-bottom border-4 border-white cursor' : 'cursor'}
                             >
                                 Experience
                             </div>
                             <div
                                 onClick={() => setComponent('project')}
                                 className={component.includes('project') ?
-                                    'pb-0 border-bottom border-4 border-white' : ''}
+                                    'pb-0 border-bottom border-4 border-white cursor' : 'cursor'}
                             >
                                 Project
                             </div>
                             <div
                                 onClick={() => setComponent('contact')}
                                 className={component.includes('contact') ?
-                                    'pb-0 border-bottom border-4 border-white' : ''}
+                                    'pb-0 border-bottom border-4 border-white cursor' : 'cursor'}
                             >
                                 Contact
                             </div>

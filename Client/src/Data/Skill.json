@@ -4,16 +4,16 @@
         "image": "/assets/skill_img/javascript.jpg"
     },
     {
-        "name": "ReactJS",
-        "image": "/assets/skill_img/react.jpg"
+        "name": "NodeJS",
+        "image": "/assets/skill_img/nodejs.jpg"
     },
     {
         "name": "ExpressJS",
         "image": "/assets/skill_img/express.jpg"
     },
     {
-        "name": "NodeJS",
-        "image": "/assets/skill_img/nodejs.jpg"
+        "name": "ReactJS",
+        "image": "/assets/skill_img/react.jpg"
     },
     {
         "name": "mongoDB",
