@@ -25,7 +25,7 @@ const Project = () => {
                                     className="card col-md-4 mb-2 zoom-container mx-auto"
                                 >
                                     <img
-                                        src="/assets/project.jpg"
+                                        src={item.image}
                                         className="card-img-top px-3 pt-2" alt="Project image" />
 
                                     <div className="card-body d-flex flex-column px-3 py-2 gap-1">

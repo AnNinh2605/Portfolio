@@ -1,10 +1,19 @@
 [
     {
+        "image": "/assets/projects_img/project_1.jpg",
         "project_title": "Employee MS",
         "description": "Develop Employee MS web project including client and server side, supporting creating, editing, and deleting employee, department, and position information.",
         "button": ["Javascript", "NodeJs", "ExpressJS", "ReactJS", "MongoDB", "Bootstrap"],
         "deploy": "https://employee-management-system-client.vercel.app",
         "source": "https://github.com/AnNinh2605/Employee-Management-System"
+    },
+    {
+        "image": "/assets/projects_img/project_2.jpg",
+        "project_title": "Task Tracking",
+        "description": "Objective: To create a web project for managing tasks and their statuses (processing, completed, or important).",
+        "button": ["Javascript", "NodeJs", "ExpressJS", "ReactJS", "MongoDB", "Bootstrap"],
+        "deploy": "https://task-management-lac-nine.vercel.app",
+        "source": "https://github.com/AnNinh2605/Task-Management"
     }
 ]
 

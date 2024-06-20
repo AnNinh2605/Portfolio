@@ -17,7 +17,7 @@ const Experience = () => {
             {/* space hidden by nav fixed-top */}
             <div className="spacer" style={{ "height": "68px" }}></div>
 
-            <div className='container pb-4 fade-in'>
+            <div className='container pb-2 fade-in'>
                 <div className="row">
                     <h1>Experience</h1>
                     <div className="col-md-5 d-flex flex-wrap text-center gap-4">
@@ -35,12 +35,12 @@ const Experience = () => {
                     </div>
 
                     <div className="col-md-7">
-                        <div className='d-flex flex-column gap-3'>
+                        <div className='d-flex flex-column gap-1'>
                             {experienceList && experienceList.length > 0 &&
                                 experienceList.map((item, index) => {
                                     return (
                                         <div key={`experience-${index}`}
-                                            className='text-light border p-3 rounded zoom-container gradient-bg'>
+                                            className='text-light border p-3 rounded-4 zoom-container gradient-bg'>
                                             <h5>{`${item.companyName} ${item.position}`}</h5>
                                             {item.description && item.description.map((item, index) => {
                                                 return (

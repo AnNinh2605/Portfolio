@@ -16,15 +16,15 @@ const About = () => {
                             Hi, I'm Ninh
                         </h1>
                         <p className='fs-5 text-indent'>
-                            As a newcomer to the field of information technology, I am eager to enhance my skills and knowledge to become a web developer. I aspire to apply the theoretical knowledge I have acquired to practical projects.
+                            As a newcomer to the field of information technology, I am eager to enhance my skills and knowledge in ReactJS and NodeJS to become a full-stack developer.
                         </p>
                         <p className='fs-5'>
-                            Besides that, I usually spend time exploring something new in technology to apply it to work and daily life.
+                            Additionally, I enjoy exploring new technologies and finding ways to apply them in both my work and daily life.
                         </p>
                         <div className='text-center '>
                             <a className='btn btn-lg btn-button rounded-pill'
-                                href="/Le_Vu_An_Ninh_Web_Developer_CV.pdf"
-                                download="Le_Vu_An_Ninh_Web_Developer_CV.pdf">
+                                href="/Le_Vu_An_Ninh_CV.pdf"
+                                download="Le_Vu_An_Ninh_CV.pdf">
                                 Download Resume
                             </a>
                         </div>
